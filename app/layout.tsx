@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
+import MobileNavbar from "@/components/mobile-navbar"
 
 export const metadata: Metadata = {
   title: "Zillagram",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <MobileNavbar />
+          </AuthProvider>
       </body>
     </html>
   )
